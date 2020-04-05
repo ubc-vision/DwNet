@@ -4,12 +4,12 @@ from data.base_data_loader import BaseDataLoader
 
 def CreateDataset(opt):
     dataset = None
-    from data.videos_runtime_warp_dataset import Videos_Runtime_Warp_Dataset
-    from data.video_test_dataset_runtime import Video_Test_Dataset_Runtime
+    from data.train_dataset import Train_Dataset
+    from data.test_dataset import Test_Dataset
     if opt.isTrain:
-        dataset = Videos_Runtime_Warp_Dataset()
+        dataset = Train_Dataset()
     else:
-        dataset = Video_Test_Dataset_Runtime()
+        dataset = Test_Dataset()
 
     print("dataset [%s] was created" % (dataset.name()))
     dataset.initialize(opt)

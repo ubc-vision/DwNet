@@ -9,7 +9,7 @@ import csv
 from collections import defaultdict
 
 
-class Video_Test_Dataset_Runtime(BaseDataset):
+class Test_Dataset(BaseDataset):
     def initialize(self, opt):
         self.opt = opt
         self.root = opt.dataroot
@@ -126,4 +126,4 @@ class Video_Test_Dataset_Runtime(BaseDataset):
         return self.dataset_size // self.opt.batchSize * self.opt.batchSize
 
     def name(self):
-        return 'Video_Test_Dataset_Runtime'
+        return 'Test_Dataset'

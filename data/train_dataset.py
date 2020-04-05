@@ -8,7 +8,7 @@ import random
 import pylab as plt
 
 
-class Videos_Runtime_Warp_Dataset(BaseDataset):
+class Train_Dataset(BaseDataset):
     def initialize(self, opt):
         self.opt = opt
         self.root = opt.dataroot
@@ -140,4 +140,4 @@ class Videos_Runtime_Warp_Dataset(BaseDataset):
         return self.dataset_size // self.opt.batchSize * self.opt.batchSize
 
     def name(self):
-        return 'Videos_Runtime_Warp_Dataset'
+        return 'Train_Dataset'

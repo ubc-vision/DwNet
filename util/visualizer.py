@@ -15,6 +15,10 @@ class Visualizer():
         self.tf_log = opt.tf_log
         self.win_size = opt.display_winsize
         self.name = opt.name
+        self.visuals_dir = os.path.join(opt.checkpoints_dir, opt.name, 'visuals')
+        self.img_dir = os.path.join(self.visuals_dir, 'images')
+        print('create web directory %s...' % self.visuals_dir)
+        util.mkdirs([self.visuals_dir, self.img_dir])
         if self.tf_log:
             import tensorflow as tf
             self.tf = tf
@@ -44,6 +48,15 @@ class Visualizer():
             # Create and write Summary
             summary = self.tf.Summary(value=img_summaries)
             self.writer.add_summary(summary, step)
+
+        for label, image_numpy in visuals.items():
+            if isinstance(image_numpy, list):
+                for i in range(len(image_numpy)):
+                    img_path = os.path.join(self.img_dir, 'epoch%.3d_%s_%d.png' % (epoch, label, i))
+                    util.save_image(image_numpy[i], img_path)
+            else:
+                img_path = os.path.join(self.img_dir, 'epoch%.3d_%s.png' % (epoch, label))
+                util.save_image(image_numpy, img_path)
 
     # errors: dictionary of error labels and values
     def plot_current_errors(self, errors, step):

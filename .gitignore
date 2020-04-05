@@ -1,2 +1,8 @@
-./checkpoints
-
+checkpoints/
+*._.DS_Store
+*.DS_Store
+!checkpoints/taichi_best*
+!checkpoints/fashion_best*
+*.pyc
+._*
+*/._*
