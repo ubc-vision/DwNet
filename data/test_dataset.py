@@ -63,8 +63,7 @@ class Test_Dataset(BaseDataset):
 
         for dp_target_path in current_paths['dp_target']:
             img = Image.open(dp_target_path)
-            params = get_params(self.opt, img.size)
-            transform_img = get_transform(self.opt, params)
+            transform_img = get_transform(self.opt, {})
             img_tensor = transform_img(img.convert('RGB'))
             dp_target_video.append(img_tensor)
 
@@ -73,13 +72,11 @@ class Test_Dataset(BaseDataset):
 
 
         dp_source = Image.open(current_paths['dp_source'])
-        params = get_params(self.opt, dp_source.size)
-        transform_img = get_transform(self.opt, params)
+        transform_img = get_transform(self.opt, {})
         dp_source_tensor = transform_img(dp_source.convert('RGB'))
 
         source = Image.open(current_paths['source'])
-        params = get_params(self.opt, source.size)
-        transform_img = get_transform(self.opt, params)
+        transform_img = get_transform(self.opt, {})
         source_tensor = transform_img(source.convert('RGB'))
 
         grid_source_tensors = []

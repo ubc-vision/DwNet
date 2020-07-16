@@ -19,6 +19,9 @@ opt.batchSize = 1
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
 visualizer = Visualizer(opt)
+# create website
+web_dir = os.path.join(opt.results_dir, opt.name, '%s_%s' % (opt.phase, opt.which_epoch))
+webpage = html.HTML(web_dir, 'Experiment = %s, Phase = %s, Epoch = %s' % (opt.name, opt.phase, opt.which_epoch))
 
 # test
 if not opt.engine and not opt.onnx:
@@ -32,6 +35,7 @@ else:
 video_group = 0
 
 for i, data in enumerate(dataset):
+    print "LOL"
     with torch.no_grad():
         if i >= opt.how_many:
             break
