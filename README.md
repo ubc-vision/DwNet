@@ -69,4 +69,5 @@ This would load the model that is included in the repo.
 ### References
 
 [1] Rıza Alp Güler, Natalia Neverova, Iasonas Kokkinos; Dense Human Pose Estimation In The Wild; https://arxiv.org/abs/1802.00434
+
 [2] Sergey Tulyakov, Ming-Yu Liu, Xiaodong Yang, Jan Kautz; MoCoGAN: Decomposing Motion and Content for Video Generation; https://arxiv.org/pdf/1707.04993.pdf
