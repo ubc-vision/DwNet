@@ -38,13 +38,13 @@ To obtain this dataset please refer to the original source[2].
 
 ### Test
 ```bash
-python test.py --name taichi_best  --dataroot datasets/taichi_test/  --nThreads 1  --loadSize 256  --gpu_ids 0  --prev_frame_num 3
+python test.py --name taichi_best  --dataroot datasets/taichi_test/  --gpu_ids 0 
 ```
 
 To test the transfer between different videos:
 
 ```bash
-python test.py --name taichi_best  --dataroot datasets/taichi_test/  --nThreads 1  --loadSize 256  --gpu_ids 0  --prev_frame_num 3 --transfer --transfer_file ./datasets/taichi_pairs.csv
+python test.py --name taichi_best  --dataroot datasets/taichi_test/  --gpu_ids 0 --transfer --transfer_file ./datasets/taichi_pairs.csv
 ```
 
 \-\-transfer_file points to a file with pairs of folders, where the first folder is a source for the frame to be transferred onto the driving video from the second column. Since we have just two examples in the test datasets, we only have two rows of pairs.
