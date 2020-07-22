@@ -1,3 +1,4 @@
+
 # DwNet
 
 This is the code repository complementing the paper ["DwNet: Dense warp-based network for pose-guided human video generation"](https://arxiv.org/abs/1910.09139).  The pretrained models are included in the repo.
@@ -10,6 +11,7 @@ Teaser  |  Quantitive results evaluation.
 ## Dependencies and Setup
 
 - Python 2.7.12
+- [DensePose](https://github.com/facebookresearch/DensePose)
 - numpy==1.15.0
 - dominate==2.3.4
 - torch==1.0.1.post2
@@ -24,7 +26,15 @@ Teaser  |  Quantitive results evaluation.
 ## Experiments
 
 ### Datasets
+All data in this project relies on the [DensePose](https://github.com/facebookresearch/DensePose)[1] output. For the source image and the driving video you would need to extract the DensePose estimation, which are essentially human pixels of an RGB image mapped to the 3D surface of the human body. You can find examples of this preproccessed data in the **datasets/** folder for Fashion and Tai-Chi datasets. Any video has to be saved as a separate folder of **.PNG** images (see the **datasets/**).
 
+To install the DensePose I used their docker version described at the bottom [here](https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md).
+
+#### Fashion dataset
+Videos for train and test can be downloaded from [here](https://vision.cs.ubc.ca/datasets/fashion/).
+
+#### Tai-Chi dataset
+To obtain this dataset please refer to the original source[2]. 
 
 ### Test
 ```bash
@@ -48,9 +58,15 @@ python train.py --name testing_taichi  --dataroot ../path/to/the/train/dataset -
 
 ```
 
-If you want ot load a pretrained model then please use a flag \-\-load_pretrained:
+If you want to load a pretrained model then please use a flag \-\-load_pretrained:
 ```bash
 python train.py --name testing_taichi  --dataroot ../path/to/the/train/dataset --batchSize 8 --gpu_ids 0 --load_pretrain checkpoints/taichi_best/
 ```
 
 This would load the model that is included in the repo. 
+
+
+### References
+
+[1] Rıza Alp Güler, Natalia Neverova, Iasonas Kokkinos; Dense Human Pose Estimation In The Wild; https://arxiv.org/abs/1802.00434
+[2] Sergey Tulyakov, Ming-Yu Liu, Xiaodong Yang, Jan Kautz; MoCoGAN: Decomposing Motion and Content for Video Generation; https://arxiv.org/pdf/1707.04993.pdf
