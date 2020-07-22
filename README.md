@@ -5,7 +5,7 @@ This is the code repository complementing the paper ["DwNet: Dense warp-based ne
 
 Teaser  |  Quantitive results evaluation.
 :-------------------------:|:-------------------------:
-![gif](demo/teaser.png) | ![gif](demo/quantitive.png)
+![gif](demo/teaser.png) | ![gif](demo/quant.png)
 
 ## Dependencies and Setup
 
