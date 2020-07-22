@@ -65,9 +65,15 @@ python train.py --name testing_taichi  --dataroot ../path/to/the/train/dataset -
 
 This would load the model that is included in the repo. 
 
+### Acknowledgements
+
+This implementation adapts a lot of code from the [Pix2PixHD[3]](https://github.com/NVIDIA/pix2pixHD).
+
 
 ### References
 
 [1] Rıza Alp Güler, Natalia Neverova, Iasonas Kokkinos; Dense Human Pose Estimation In The Wild; https://arxiv.org/abs/1802.00434
 
 [2] Sergey Tulyakov, Ming-Yu Liu, Xiaodong Yang, Jan Kautz; MoCoGAN: Decomposing Motion and Content for Video Generation; https://arxiv.org/pdf/1707.04993.pdf
+
+[3] Ting-Chun Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, Jan Kautz, Bryan Catanzaro; High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs; https://arxiv.org/pdf/1711.11585.pdf
