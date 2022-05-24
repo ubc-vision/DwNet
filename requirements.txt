@@ -4,6 +4,6 @@ torch==1.0.1.post2
 scipy==1.1.0
 matplotlib==2.2.3
 torchvision==0.2.1
-tensorflow_gpu==1.15.2
+tensorflow_gpu==2.6.4
 Pillow==8.1.1
 tensorflow==2.2.0
